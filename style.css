@@ -20,8 +20,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -60,9 +60,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -73,40 +73,57 @@ select {
   }
 }
 
-body {
-    background: hsl(212, 45%, 89%)
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(212, 45%, 89%);
+  --gray-blue: hsl(220, 15%, 55%);
+  --dark-blue: hsl(218, 44%, 22%);
 }
+
+body {
+  background: var(--light-gray);
+  font-family: "Outfit", sans-serif;
+}
+
 
 .container {
-    min-height: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
 article {
-    display: flex;
-    flex-direction: column;
-    width: 360px;
-    
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  max-width: 22rem;
 }
 
 .card {
-    padding: 1em;
-    border-radius: 1em;
-    background: white;
+  padding: 1.5em;
+  border-radius: 1em;
+  background: white;
 }
 
 .card img {
-    border-radius: 2em;
+  width: 100%;
+  border-radius: 1em;
 }
 
 .card-heading {
-    font-size: 1.5em;
-    color: hsl(218, 44%, 22%);
-    font-weight: bold;
-    padding: 1em 0;
+  text-align: center;
+  font-size: 1.5em;
+  color: var(--dark-blue);
+  font-weight: bold;
+  line-height: 1;
+  padding: 1em 0;
 }
 
-
+.card-content {
+  text-align: center;
+  padding: 0 .5em;
+  color: var(--gray-blue);
+  line-height: ;
+  font-size: .9375rem;
+}
